@@ -1,1 +1,5 @@
 /* Add application styles & imports to this file! */
+::highlight(combobox-search-result) {
+  background-color: yellow;
+  color: black;
+}

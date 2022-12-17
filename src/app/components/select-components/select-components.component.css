@@ -1,0 +1,79 @@
+option[selected] {
+  background-color: aquamarine;
+}
+
+.multiselect [slot='button'] {
+  background-color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(217, 217, 217);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  width: 300px;
+  min-height: 32px;
+}
+
+selectmenu [behavior='listbox'] {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(217, 217, 217);
+  border-radius: 2px;
+  border-top: 0;
+  box-sizing: border-box;
+  transform: translateY(-1px);
+}
+
+.multiselect .selected-values {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+}
+
+.combobox input[type='search'] {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+}
+
+/* [popover]::backdrop {
+  backdrop-filter: blur(3px);
+} */
+
+.multiselect .selected-values li {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  height: 24px;
+  line-height: 22px;
+  cursor: default;
+  user-select: none;
+  margin-inline-end: 4px;
+  padding-inline-start: 8px;
+  padding-inline-end: 4px;
+  flex: 0 0 auto;
+  background: rgb(245, 245, 245);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 2px;
+}
+
+.multiselect .selected-values .label {
+  margin-right: 4px;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.multiselect .selected-values .remove {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 10px;
+  cursor: pointer;
+}
