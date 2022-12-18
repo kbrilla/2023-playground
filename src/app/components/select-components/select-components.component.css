@@ -26,7 +26,7 @@ selectmenu [behavior='listbox'] {
 .multiselect .selected-values {
   display: flex;
   overflow: hidden;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 4px;
@@ -76,4 +76,25 @@ selectmenu [behavior='listbox'] {
   color: rgba(0, 0, 0, 0.45);
   font-size: 10px;
   cursor: pointer;
+}
+
+.hide-on-partialy-visible {
+  view-timeline-name: revealing-image;
+  view-timeline-axis: block;
+
+  animation: linear reveal both;
+  animation-timeline: revealing-image;
+
+  /* Needed for Chrome Canary: */
+  animation-range: contain 0 100%;
+}
+
+.openmore {
+  anchor-name: --openmore;
+}
+
+.more-options {
+  inset: auto;
+  left: anchor(--openmore left);
+  bottom: anchor(--openmore top);
 }

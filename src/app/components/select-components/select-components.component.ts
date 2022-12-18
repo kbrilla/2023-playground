@@ -16,8 +16,9 @@ export class SelectComponentsComponent implements OnInit {
 
   options: string[] = ['Cat', 'Dog', 'Fishes', 'CatDog', 'DogFish', 'DogCat'];
 
-  selectedSet: Set<string> = new Set();
-  selected = [];
+  selected = [...this.options];
+  selectedSet: Set<string> = new Set(this.selected);
+
   filtred = [...this.options];
   #filter = '';
   set filter(value: string) {
@@ -33,15 +34,17 @@ export class SelectComponentsComponent implements OnInit {
   selectOption(option: string, event: Event) {
     event.preventDefault();
     if (this.selectedSet.has(option)) {
+      console.log('has');
       this.selectedSet.delete(option);
     } else {
+      console.log('add');
       this.selectedSet.add(option);
     }
+
     this.selected = [...this.selectedSet];
   }
 
   popoverhide(event: Event) {
-    console.log('log');
     this.filter = '';
   }
 }

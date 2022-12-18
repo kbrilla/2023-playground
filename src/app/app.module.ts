@@ -12,12 +12,19 @@ import { SelectComponentsComponent } from './components/select-components/select
   declarations: [AppComponent, HelloComponent],
   providers: [
     provideRouter([
+      // {
+      //   path: '',
+      //   loadComponent: () =>
+      //     import(
+      //       './components/select-components/select-components.component'
+      //     ).then((c) => c.SelectComponentsComponent),
+      // },
       {
         path: '',
         loadComponent: () =>
-          import(
-            './components/select-components/select-components.component'
-          ).then((c) => c.SelectComponentsComponent),
+          import('./components/video-capture/video-capture.component').then(
+            (c) => c.VideoCaptureComponent
+          ),
       },
     ]),
   ],

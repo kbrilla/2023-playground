@@ -3,3 +3,18 @@
   background-color: yellow;
   color: black;
 }
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 100%;
+  }
+  99% {
+    opacity: 100%
+  }
+  100% {
+    opacity: 0;
+  }
+}

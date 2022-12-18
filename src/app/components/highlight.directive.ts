@@ -47,6 +47,7 @@ export class HighlightDirective implements AfterContentInit, OnDestroy {
     this.mutationObserver.observe(this.elementRef.nativeElement, {
       childList: true,
       subtree: true,
+      characterDataOldValue: true,
     });
     this.rangesRefresh();
   }
@@ -68,11 +69,11 @@ export class HighlightDirective implements AfterContentInit, OnDestroy {
 
       HighlightDirective.rangesMap.set(this.elementRef.nativeElement, ranges);
 
-      console.log(
-        matches,
-        HighlightDirective.rangesMap,
-        Object.values(HighlightDirective.rangesMap)
-      );
+      // console.log(
+      //   matches,
+      //   HighlightDirective.rangesMap,
+      //   Object.values(HighlightDirective.rangesMap)
+      // );
       this.highlightRefresh();
     }, 0);
   }
@@ -84,7 +85,7 @@ export class HighlightDirective implements AfterContentInit, OnDestroy {
       },
       [] as any[]
     );
-    console.log(rangesToHighlight);
+    // console.log(rangesToHighlight);
     (CSS as any).highlights.set(
       'combobox-search-result',
       new Highlight(...rangesToHighlight)
