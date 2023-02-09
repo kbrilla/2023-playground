@@ -54,7 +54,7 @@ export class HighlightDirective implements AfterContentInit, OnDestroy {
 
   rangesRefresh() {
     setTimeout(() => {
-      console.log(this.elementRef.nativeElement, this.#highlight);
+      // console.log(this.elementRef.nativeElement, this.#highlight);
       const textNode = [...this.elementRef.nativeElement.childNodes].find(
         (child) => child.nodeType === Node.TEXT_NODE
       );

@@ -26,9 +26,9 @@
     autofocus
     slot="listbox"
     behavior="listbox"
-    (popoverhide)="popoverhide($event)"
+    (toggle)="popoverhide($event)"
   >
-    <input type="search" autofocus [(ngModel)]="filter" />
+    <input type="search" [(ngModel)]="filter" />
     <div class="options" tabindex="-1">
       <option
         *ngFor="let option of filtred"
